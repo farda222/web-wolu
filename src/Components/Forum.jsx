@@ -96,7 +96,7 @@ const Forum = () => {
           <img className="w-7  h-7 rounded-full " src={Iconaccount} alt="Icon Account" />
         </div>
       </div>
-      <div className="max-w-md mx-auto shadow-lg rounded-lg overflow-hidden mt-5">
+      <div className="mx-auto rounded-lg overflow-hidden mt-5 w-full">
         <div className="flex">
           <div className="messages-container p-4 space-y-4 overflow-y-auto max-h-full bg-neutral-300 w-fit ml-4 rounded-lg rounded-tl-none">
             <p className="text-sm font-semibold">Alexander Agung</p>
@@ -128,8 +128,8 @@ const Forum = () => {
           ))}
         </div>
       </div>
-      <div className="mx-5">
-        <div className="input-container p-4 flex justify-center align-middle items-center mx-auto container bottom-0 left-0 mt-52 fixed bg-white border-2 border-neutral-300 w-full">
+      <div className="mt-28">
+        <div className="input-container p-4 flex justify-center align-middle items-center mx-auto container bottom-0 left-0 mt-72 fixed bg-white border-2 border-neutral-300 w-full">
           <img className="w-9 h-9 rounded-full mr-3" src={Iconaccount} />
           <input type="text" value={message} onChange={handleMessageChange} onKeyDown={handleKeyPress} placeholder="Type your message..." className="flex-1 px-4 py-2 rounded-full bg-white" />
           <button onClick={handleSendMessage} className="px-4 py-2 bg-white text-white rounded-full focus:outline-none hover:bg-neutral-100 transition-all">
