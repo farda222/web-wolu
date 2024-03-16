@@ -13,9 +13,9 @@ const Navbar = () => {
 
   const menuItems = [
     { icon: <Home size={25} className="mr-4 font-extrabold" />, text: "Home" },
-    { icon: <Calendar size={25} className="mr-4" />, text: "Calender" },
-    { icon: <Trophy size={25} className="mr-4" />, text: "Quiz" },
-    { icon: <MdHelp size={25} className="mr-4" />, text: "Account Name" },
+    { icon: <Calendar size={25} className="mr-4" />, text: "Calendar" },
+    { icon: <Trophy size={25} className="mr-4" />, text: "Quiz", route: "/Quizpage" },
+    { icon: <MdHelp size={25} className="mr-4" />, text: "Account Name", route: "/Profileteacher" }, // Menambahkan properti route
   ];
 
   return (
@@ -40,27 +40,13 @@ const Navbar = () => {
         <AiOutlineClose onClick={() => setNav(!nav)} size={20} className="absolute right-[15.3rem] top-10 cursor-pointer" />
         <nav className="lg:block">
           <ul className="flex flex-col text-gray-800 py-5 mt-16 lg:block">
-            {menuItems.map(({ icon, text }, index) => {
-              if (text === "Quiz") {
-                return (
-                  <div key={index}>
-                    <li className="text-md font-medium mt-3 flex cursor-pointer hover:text-indigo-600 w-full mx-auto px-8 p-5 hover:bg-indigo-600 hover:bg-opacity-10 hover:border-l-4 hover:border-indigo-600 hover:border-solid transition-all">
-                      <Link to="/Quizpage" className="flex items-center">
-                        {icon} {text}
-                      </Link>
-                    </li>
-                  </div>
-                );
-              } else {
-                return (
-                  <div key={index}>
-                    <li className="text-md font-medium mt-3 flex cursor-pointer hover:text-indigo-600 w-full mx-auto px-8 p-5 hover:bg-indigo-600 hover:bg-opacity-10 hover:border-l-4 hover:border-indigo-600 hover:border-solid transition-all">
-                      {icon} {text}
-                    </li>
-                  </div>
-                );
-              }
-            })}
+            {menuItems.map(({ icon, text, route }, index) => (
+              <li key={index} className="text-md font-medium mt-3 flex cursor-pointer hover:text-indigo-600 w-full mx-auto px-8 p-5 hover:bg-indigo-600 hover:bg-opacity-10 hover:border-l-4 hover:border-indigo-600 hover:border-solid transition-all">
+                <Link to={route} className="flex items-center"> {/* Gunakan Link */}
+                  {icon} {text}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
