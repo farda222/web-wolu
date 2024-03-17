@@ -104,7 +104,7 @@ const Forum = () => {
           </div>
           <p className="text-xs ml-2 mt-[4.5rem]">07:09 AM</p>
         </div>
-        <div className="messages-container p-4 space-y-4 overflow-y-auto max-h-full">
+        <div className="messages-container p-4 space-y-4 overflow-y-auto max-h-[calc(100vh - 400px)]">
           {/* Pesan dari pengguna lain */}
           {messages.map((msg, index) => (
             <div key={index} className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
@@ -127,6 +127,8 @@ const Forum = () => {
           ))}
         </div>
       </div>
+      
+
       <div className="mt-28 lg:px-60">
         <div className="input-container p-4 flex justify-center align-middle items-center mx-auto container bottom-0 left-0 mt-72 fixed bg-white border-2 border-neutral-300 w-full lg:w-[50%] lg:ml-80 lg:mb-10 lg:rounded-2xl lg:px-10 2xl:ml-[30rem]">
           <img className="w-9 h-9 rounded-full mr-3" src={Iconaccount} />
