@@ -1,8 +1,6 @@
-import Calendarcomp from '../Components/Calendarcomponent'
+import Calendarcomp from "../Components/Calendarcomponent";
 const Calendar = () => {
-  return (
-    <Calendarcomp/>
-  )
-}
+  return <Calendarcomp />;
+};
 
-export default Calendar
+export default Calendar;
