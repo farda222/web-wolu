@@ -108,8 +108,9 @@ const Forum = () => {
           {/* Pesan dari pengguna lain */}
           {messages.map((msg, index) => (
             <div key={index} className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
-              <p className="text-xs text-gray-500 mt-[3.4rem] mr-3">{formatTime(msg.timestamp, "Asia/Jakarta")}</p>
-              <div className={`message ${msg.sender === "user" ? "bg-indigo-600 text-white rounded-lg rounded-tr-none px-3 py-2" : "bg-white text-gray-800 rounded-lg rounded-tr-none"} max-w-[70%] lg:max-w-[80%] xl:max-w-[90%]`}>
+              <div
+                className={`message ${msg.sender === "user" ? "bg-indigo-600 text-white rounded-lg rounded-tr-none px-3 py-2" : "bg-white text-gray-800 rounded-lg rounded-tr-none"} max-w-[70%] lg:max-w-[80%] xl:max-w-[90%]`}
+                style={{ wordWrap: "break-word" }}>
                 <div className="flex justify-between items-center">
                   {msg.sender !== "user" && (
                     <div className="flex items-center">
@@ -122,12 +123,12 @@ const Forum = () => {
                   </div>
                 </div>
                 {msg.text}
+                <p className="text-xs text-neutral-400 mt-3">{formatTime(msg.timestamp, "Asia/Jakarta")}</p> {/* Format waktu di bawah teks pesan */}
               </div>
             </div>
           ))}
         </div>
       </div>
-      
 
       <div className="mt-28 lg:px-60">
         <div className="input-container p-4 flex justify-center align-middle items-center mx-auto container bottom-0 left-0 mt-72 fixed bg-white border-2 border-neutral-300 w-full lg:w-[50%] lg:ml-80 lg:mb-10 lg:rounded-2xl lg:px-10 2xl:ml-[30rem]">

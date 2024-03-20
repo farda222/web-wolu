@@ -15,6 +15,7 @@ import Quizdetail from "./Pages/Quizdetailpage";
 import Memberpage from "./Pages/Memberpage";
 import Forum from "./Pages/Forumpage";
 import Teacherprofile from './Pages/Accountteacher'
+import Calendar from './Pages/Calendar'
 function App() {
   return (
     <Router>
@@ -34,6 +35,7 @@ function App() {
         <Route path="/Memberpage" element={<Memberpage />}></Route>
         <Route path="/Forum" element={<Forum />}></Route>
         <Route path="/Profileteacher" element={<Teacherprofile />}></Route>
+        <Route path="/Calendar" element={<Calendar />}></Route>
       </Routes>
     </Router>
   );
