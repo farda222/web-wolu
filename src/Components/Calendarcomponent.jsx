@@ -1,22 +1,18 @@
 import { useState } from "react";
 import Navbar from "../Components/NavbarUtama";
-import { format, addMonths, subMonths, startOfWeek, startOfMonth, endOfWeek, endOfMonth, isSameMonth, isSameDay, addDays } from "date-fns";
+import moment from "moment";
 
 const ComplexCalendar = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(null); // null berarti tidak ada tanggal yang dipilih
-  const [markedDates, setMarkedDates] = useState([]); // Tambah state untuk menyimpan tanggal yang ditandai
+  const [currentDate, setCurrentDate] = useState(moment());
+  const [selectedDate, setSelectedDate] = useState(null); 
+  const [markedDates, setMarkedDates] = useState([]);
 
   const next = () => {
-    setCurrentDate((currentDate) => {
-      return addMonths(currentDate, 1);
-    });
+    setCurrentDate(currentDate.clone().add(1, 'month'));
   };
 
   const prev = () => {
-    setCurrentDate((currentDate) => {
-      return subMonths(currentDate, 1);
-    });
+    setCurrentDate(currentDate.clone().subtract(1, 'month'));
   };
 
   const onDateClick = (day) => {
@@ -26,11 +22,11 @@ const ComplexCalendar = () => {
   const toggleMarkedDate = () => {
     if (selectedDate) {
       if (markedDates.includes(selectedDate)) {
-        setMarkedDates(markedDates.filter((date) => !isSameDay(date, selectedDate)));
+        setMarkedDates(markedDates.filter((date) => date !== selectedDate));
       } else {
         setMarkedDates([...markedDates, selectedDate]);
       }
-      setSelectedDate(null); // Hilangkan seleksi tanggal yang dipilih agar warna latar belakang dapat diubah
+      setSelectedDate(null); 
     }
   };
 
@@ -39,7 +35,7 @@ const ComplexCalendar = () => {
       <>
         <div className="flex justify-between items-center mb-8 px-6">
           <button onClick={prev}>&#8249;</button>
-          <div>{format(currentDate, "MMMM yyyy")}</div>
+          <div>{currentDate.format("MMMM yyyy")}</div>
           <button onClick={next}>&#8250;</button>
         </div>
       </>
@@ -60,28 +56,27 @@ const ComplexCalendar = () => {
   };
 
   const renderCells = () => {
-    const monthStart = startOfMonth(currentDate);
-    const monthEnd = endOfMonth(currentDate);
-    const startDate = startOfWeek(monthStart);
-    const endDate = endOfWeek(monthEnd);
+    const monthStart = currentDate.clone().startOf('month');
+    const monthEnd = currentDate.clone().endOf('month');
+    const startDate = monthStart.clone().startOf('week');
+    const endDate = monthEnd.clone().endOf('week');
 
     const rows = [];
     let days = [];
-    let day = startDate;
+    let day = startDate.clone();
 
-    while (day <= endDate) {
+    while (day.isSameOrBefore(endDate)) {
       for (let i = 0; i < 7; i++) {
-        const formattedDate = format(day, "d");
-        const cloneDay = day;
-        const isCurrentMonth = isSameMonth(day, monthStart);
-        const isDaySelected = isSameDay(day, selectedDate);
+        const formattedDate = day.format('D');
+        const isCurrentMonth = day.isSame(monthStart, 'month');
+        const isDaySelected = selectedDate && day.isSame(selectedDate, 'day');
         days.push(
-          <div key={day} className={`relative text-center p-2 cursor-pointer ${!isCurrentMonth ? "text-gray-300 rounded-lg" : ""} ${isDaySelected ? "bg-indigo-600 text-white rounded-lg" : ""}`} onClick={() => onDateClick(cloneDay)}>
+          <div key={day} className={`relative text-center p-2 cursor-pointer ${!isCurrentMonth ? "text-gray-300 rounded-lg" : ""} ${isDaySelected ? "bg-indigo-600 text-white rounded-lg" : ""}`} onClick={() => onDateClick(day.clone())}>
             {formattedDate}
-            {markedDates.includes(day) && <div className="absolute top-0 right-0 w-2 h-2 bg-blue-500 rounded-full"></div>}
+            {markedDates.includes(day.format('YYYY-MM-DD')) && <div className="absolute top-0 right-0 w-2 h-2 bg-blue-500 rounded-full"></div>}
           </div>
         );
-        day = addDays(day, 1);
+        day.add(1, 'day');
       }
       rows.push(
         <div key={day} className="grid grid-cols-7 gap-1">
@@ -109,8 +104,6 @@ const ComplexCalendar = () => {
       </div>
       <div className="mx-auto max-w-xl p-7">
         <div className="bg-white shadow-lg shadow-neutral-200 p-4">
-          {" "}
-          {/* Updated to use shadow-lg and text-neutral-500 */}
           {renderHeader()}
           {renderDays()}
           {renderCells()}
@@ -118,8 +111,7 @@ const ComplexCalendar = () => {
         <div className="flex justify-start mt-10">
           <button onClick={toggleMarkedDate} className="px-3 py-1 text-neutral 400 font-medium rounded">
             Add Caption
-          </button>{" "}
-          {/* Tombol "Add Caption" */}
+          </button>
         </div>
       </div>
     </div>
