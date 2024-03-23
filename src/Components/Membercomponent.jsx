@@ -61,54 +61,54 @@ const Membercomponent = () => {
           <h1 className="text-indigo-600 text-2xl font-semibold">Member</h1>
         </div>
       </div>
-      <div className="container mx-auto align-middle items-center flex justify-center p-4 mt-10">
+      <div className="container mx-auto align-middle items-center flex justify-start p-4 mt-10">
 
         <ul className="grid grid-cols-1 gap-5">
           {/* Student 1 */}
           <li className="p-4 rounded-lg flex items-center">
-            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Student 1" className="w-8 h-8 lg:w-12 lg:h-12 rounded-full" />
-            <span className="ml-2 lg:ml-10 lg:text-xl">Ms. Ika</span>
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Student 1" className="w-10 h-10 lg:w-12 lg:h-12 rounded-full" />
+            <span className="ml-7 lg:ml-10 lg:text-xl">Ms. Ika</span>
           </li>
 
           {/* Student 2 */}
           <li className="p-4 rounded-lg flex items-center">
-            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Student 2" className="w-8 h-8 lg:w-12 lg:h-12 rounded-full" />
-            <span className="ml-2 lg:ml-10 lg:text-xl">Alexxander Agung</span>
+            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Student 2" className="w-10 h-10 lg:w-12 lg:h-12 rounded-full" />
+            <span className="ml-7 lg:ml-10 lg:text-xl">Alexxander Agung</span>
           </li>
 
           {/* Teacher 1 */}
           <li className="p-4 rounded-lg flex items-center">
-            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Teacher 1" className="w-8 h-8 lg:w-12 lg:h-12 rounded-full" />
-            <span className="ml-2 lg:ml-10 lg:text-xl">Rafif Naufal Aditya</span>
+            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Teacher 1" className="w-10 h-10 lg:w-12 lg:h-12 rounded-full" />
+            <span className="ml-7 lg:ml-10 lg:text-xl">Rafif Naufal Aditya</span>
           </li>
 
           {/* Teacher 2 */}
           <li className="p-4 rounded-lg flex items-center">
-            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Teacher 2" className="w-8 h-8 lg:w-12 lg:h-12 rounded-full" />
-            <span className="ml-2 lg:ml-10 lg:text-xl">Aditya Widodo Putra</span>
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Teacher 2" className="w-10 h-10 lg:w-12 lg:h-12 rounded-full" />
+            <span className="ml-7 lg:ml-10 lg:text-xl">Aditya Widodo Putra</span>
           </li>
           {/* Student 1 */}
           <li className="p-4 rounded-lg flex items-center">
-            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Student 1" className="w-8 h-8 lg:w-12 lg:h-12 rounded-full" />
-            <span className="ml-2 lg:ml-10 lg:text-xl">Farda Syarif Mubarok</span>
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Student 1" className="w-10 h-10 lg:w-12 lg:h-12 rounded-full" />
+            <span className="ml-7 lg:ml-10 lg:text-xl">Farda Syarif Mubarok</span>
           </li>
 
           {/* Student 2 */}
           <li className="p-4 rounded-lg flex items-center">
-            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Student 2" className="w-8 h-8 lg:w-12 lg:h-12 rounded-full" />
-            <span className="ml-2 lg:ml-10 lg:text-xl">Sekar Ayu Wardani</span>
+            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Student 2" className="w-10 h-10 lg:w-12 lg:h-12 rounded-full" />
+            <span className="ml-7 lg:ml-10 lg:text-xl">Sekar Ayu Wardani</span>
           </li>
 
           {/* Teacher 1 */}
           <li className="p-4 rounded-lg flex items-center">
-            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Teacher 1" className="w-8 h-8 lg:w-12 lg:h-12 rounded-full" />
-            <span className="ml-2 lg:ml-10 lg:text-xl">Olivia</span>
+            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Teacher 1" className="w-10 h-10 lg:w-12 lg:h-12 rounded-full" />
+            <span className="ml-7 lg:ml-10 lg:text-xl">Olivia</span>
           </li>
 
           {/* Teacher 2 */}
           <li className="p-4 rounded-lg flex items-center">
-            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Teacher 2" className="w-8 h-8 lg:w-12 lg:h-12 rounded-full" />
-            <span className="ml-2 lg:ml-10 lg:text-xl">Yanto Kusumo</span>
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Teacher 2" className="w-10 h-10 lg:w-12 lg:h-12 rounded-full" />
+            <span className="ml-7 lg:ml-10 lg:text-xl">Yanto Kusumo</span>
           </li>
         </ul>
       </div>
