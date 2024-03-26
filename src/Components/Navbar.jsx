@@ -110,7 +110,7 @@ const Navbar = () => {
             </div>
           </div>
         )}
-        <div className="flex gap-4">
+        <div className="flex gap-4 mr-6 lg:mr-0">
           <button className={"bg-indigo-600 text-white px-6 py-3 font-medium"} onClick={() => navigate("/LoginWolu")}>
             Login
           </button>

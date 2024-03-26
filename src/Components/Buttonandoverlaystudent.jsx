@@ -2,13 +2,11 @@ import { useState } from "react";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Icon from "../assets/img/Account.jpg";
-import { useNavigate } from "react-router-dom";
 
 function App() {
   const [showOverlay, setShowOverlay] = useState(false);
   const [link, setLink] = useState(""); // State untuk menyimpan link gambar kelas
   const [classes, setClasses] = useState([]);
-  const navigate = useNavigate();
 
   const handleButtonClick = () => {
     setShowOverlay(true);
@@ -117,7 +115,7 @@ function App() {
               <div className={`bg-white rounded-xl shadow-md p-4 border-2 border-solid lg:border-indigo-600 border-neutral-300 lg:w-[50rem] 2xl:w-[75rem] 2xl:h-[20rem] ${classes.length === 1 && index === 0 ? "mt-20" : ""}`}>
                 {classItem.background && <img src="https://placehold.co/600x400" alt="Background" className="w-full h-28 object-cover flex mb-2 rounded-t-lg z-0 2xl:h-40" />}
                 <img className="h-14 w-14 rounded-full -mt-10 ml-44 z-50 lg:ml-[42rem] 2xl:ml-[63rem] 2xl:w-20 2xl:h-20 2xl:-mt-11" src={Icon} alt="Icon" />
-                <h1 onClick={() => navigate("/Yourclass")} className="text-2xl font-bold mb-2 -mt-1 -mr-20 2xl:mt-0 2xl:text-3xl">
+                <h1 className="text-2xl font-bold mb-2 -mt-1 -mr-20 2xl:mt-0 2xl:text-3xl">
                   {classItem.name}
                 </h1>
                 <p className="text-sm text-gray-600 mb-2 2xl:text-lg">0 Member</p>
