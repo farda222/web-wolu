@@ -1,8 +1,11 @@
+import Navbar from "../Components/NavbarStudent";
+import Buttonstudent from "../Components/Buttonandoverlaystudent";
 const Student = () => {
   return (
     <>
-      <div>
-        <h1>Yanto</h1>
+      <div className="font-Jakarta">
+        <Navbar />
+        <Buttonstudent />
       </div>
     </>
   );
