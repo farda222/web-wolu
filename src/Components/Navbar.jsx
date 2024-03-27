@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Logo from "../assets/img/Logo.svg";
 import { useNavigate } from "react-router-dom";
 
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
